@@ -24,10 +24,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleDebug
     - name: Rename APK
-      run: ls && tree app/build/outputs && mv app/build/outputs/apk/debug/*.apk app/build/outputs/apk/debug/Vespucci-debug-$(git log -n 1 --format='%h').apk
+      run: ls && tree build && mv build/outputs/apk/debug/*.apk build/outputs/apk/debug/Vespucci-debug-$(git log -n 1 --format='%h').apk
     - name: Archive APK
       uses: actions/upload-artifact@v4
       with: 
         name: debug-apk
-        path: app/build/outputs/apk/debug/*.apk
+        path: build/outputs/apk/debug/*.apk
         retention-days: 30
