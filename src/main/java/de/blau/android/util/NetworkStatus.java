@@ -34,7 +34,7 @@ public class NetworkStatus {
     public boolean isConnected() {
         try {
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            return networkInfo != null /*&& networkInfo.isConnectedOrConnecting()*/;
+            return true /*networkInfo != null && networkInfo.isConnectedOrConnecting()*/;
         } catch (Exception e) {
             Log.e(DEBUG_TAG, "Exception getting network status " + e);
             return false;
@@ -48,7 +48,7 @@ public class NetworkStatus {
     public boolean isConnectedOrConnecting() {
         try {
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            return networkInfo != null /*&& networkInfo.isConnectedOrConnecting()*/;
+            return true /*networkInfo != null && networkInfo.isConnectedOrConnecting()*/;
         } catch (Exception e) {
             Log.e(DEBUG_TAG, "Exception getting network status " + e);
             return false;
