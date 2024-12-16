@@ -23,8 +23,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleDebug
-    - name: Rename APK
-      run: ls && tree build && mv build/outputs/apk/debug/*.apk build/outputs/apk/debug/Vespucci-debug-$(git log -n 1 --format='%h').apk
     - name: Archive APK
       uses: actions/upload-artifact@v4
       with: 
